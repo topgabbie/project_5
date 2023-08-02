@@ -8,7 +8,7 @@ I created two EC2 instances named **mysql_server and mysql_client**
 
 on both instance, the command below  was ran to update the repo
 
-|`sudo apt update`
+`sudo apt update`
 
 The command below was ran to install mysql server agent
 
@@ -72,7 +72,9 @@ To grant access to the created user, the command below was ran
 
 `GRANT ALL PRIVILEGES ON example_db.* TO 'username'@'%' IDENTIFIED BY 'password';`
 
-To input gg
+On the client server, the command below ran to connect the mysql server to mysql client
+
+> mysql -h hostname -u username -p
 
 
 
