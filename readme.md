@@ -8,15 +8,15 @@ I created two EC2 instances named **mysql_server and mysql_client**
 
 on both instance, the command below  was ran to update the repo
 
->|`sudo apt update`
+|`sudo apt update`
 
 The command below was ran to install mysql server agent
 
->`sudo apt-get install mysql-server`
+`sudo apt-get install mysql-server`
 
 After successfull installation, the sql service was started with the command below
 
->`sudo systemctl start mysql`
+`sudo systemctl start mysql`
 
 >**output**![sqlactive](images/sql_active.png)
 
@@ -43,9 +43,9 @@ This was done by changing the bind address on the mysqld.cnf to 0.0.0.0
 
 The command below was used 
 
->     `sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf`
+`sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf`
 
->**output** ![bindaddr](images/changebindaddr.png)
+**output** ![bindaddr](images/changebindaddr.png)
 
 The next step is to create a datebase that will later be access via the client instance. 
 
@@ -56,24 +56,23 @@ For this step, the following steps were used
 - Grant the created user in step 1 access to the created database
 
 To create, the command below was used to change the instance to sql mode
->`sudo mysql`
+`sudo mysql`
 
 >**output**![sql_console](images/Sql_console.png)
   
 To create a user, the command below was ran
 
->`CREATE USER 'example'@'%' IDENTIFIED BY 'password';`
+`CREATE USER 'example'@'%' IDENTIFIED BY 'password';`
 
 To create a datebase, the command below was used
 
->`CREATE DATABASE BUKAYO_SAKA`
+`CREATE DATABASE BUKAYO_SAKA`
 
 To grant access to the created user, the command below was ran
 
->`GRANT ALL PRIVILEGES ON example_db.* TO 'username'@'%' IDENTIFIED BY 'password';`
+`GRANT ALL PRIVILEGES ON example_db.* TO 'username'@'%' IDENTIFIED BY 'password';`
 
-To input
-
+To input gg
 
 
 
