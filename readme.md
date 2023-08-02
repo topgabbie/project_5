@@ -74,7 +74,7 @@ To grant access to the created user, the command below was ran
 
 On the client server, the command below ran to connect the mysql server to mysql client
 
-> mysql -h hostname -u username -p
+>           mysql -h hostname -u username -p
 
 
 
