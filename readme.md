@@ -22,11 +22,11 @@ After successfull installation, the sql service was started with the command bel
 
 On the sql client instance, the command below was used to install mysql client 
 
-    `sudo apt-get install mysql-client`
+     sudo apt-get install mysql-client
 
 To confirm if the mysql-client was succesfully installed, the command below was used
 
-     `mysql --version` 
+      mysql --version
 
 >**output**![output](images/sqlconfirm.png) 
 
@@ -63,19 +63,42 @@ To create, the command below was used to change the instance to sql mode
   
 To create a user, the command below was ran
 
-    CREATE USER 'example'@'%' IDENTIFIED BY 'password';
+    CREATE USER 'wenger'@'%' IDENTIFIED BY 'password';
+
+To confirm if the mysql user has been created, the command below was used
+
+    SELECT user FROM mysql.user;
+>>**output***
+![createduser](images/createduser.png)    
 
 To create a datebase, the command below was used
 
     CREATE DATABASE BUKAYO_SAKA
+>**output**
+![show_db](images/show_db.png)    
+
+To confirm if the created datebase was successfull. Run the command below
+
+    SHOW DATABASES;
 
 To grant access to the created user, the command below was ran
 
-    GRANT ALL PRIVILEGES ON BUKAYO_SAKA.* TO 'username'@'%' IDENTIFIED BY 'password';
+    GRANT ALL ON BUKAYO_SAKA.* TO 'wenger'@'%' WITH GRANT OPTION;
 
 On the client server, the command below ran to connect the mysql server to mysql client
 
-        mysql -h hostname -u username -p     
+        mysql -u hostname -h username -p     
+
+where hostname is the mysql server instance and username is the eample_user
+ >>**output**
+ ![login_con](images/login_conf.png)
+
+ upon login, we can access the databases created on the mysql server with the SHOW DATABASES; command
+ >**output**
+ ![show_db](images/DB_CONF.png)
+
+ **END**
+
 
 
 
